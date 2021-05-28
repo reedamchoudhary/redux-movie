@@ -1,25 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
+import {connect} from 'react-redux'
+import {countUp, countDown} from "./actions"
 
-function App() {
+function App(props) {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button onClick={(event)=>{
+        event.preventDefault();
+        console.log(event);
+        props.dispatch(countUp())
+      }
+      }> - </button>
+      <input type = "text" name = "number" />
+      <button> + </button>
     </div>
   );
 }
 
-export default App;
+export default connect()(App);

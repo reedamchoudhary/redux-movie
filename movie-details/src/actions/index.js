@@ -1,6 +1,5 @@
-const SEE_DETAILS = "SEE_DETAILS"
+const COUNT_UP = "COUNT_UP"
+export const countUp = () =>{type : COUNT_UP}
 
-const seeDetails = () =>(
-    {type : SEE_DETAILS,
-    id : Math.random()}
-)
+const COUNT_DOWN = "COUNT_DOWN"
+export const countDown = () =>{type : COUNT_DOWN}
